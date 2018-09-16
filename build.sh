@@ -93,9 +93,9 @@ rm -rf squashfs-root
 popd
 
 # re-build ISO
-mkisofs -l -D -r -V "Live ISO" -cache-inodes -J -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../voctomix.iso .
+mkisofs -l -D -r -V "Live ISO" -cache-inodes -J -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o ../voctomix-18.04.1_$(date +%Y-%m-%d).iso .
 
 # back to build directory
 popd
 
-mv voctomix.iso "$OLD_CWD"/
+mv voctomix*.iso "$OLD_CWD"
